@@ -1,0 +1,208 @@
+/* layout */
+#header {
+    background-color: #a6deff;
+    background-image: url(../img/jeju.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+#nav {
+    background-color: #8797b9;
+}
+#main {
+}
+#footer {
+    background-color: #8797b9;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+/* header */
+.logo {
+    width: 100%;
+
+    /* padding: 140px 0; */
+    padding: clamp(30px, 11.6vw, 140px) 0;
+
+    /* clamp(최소값, 유동값, 최대값) */
+    /* 유동값 = (140px / 1200px) x 100 = 11.6vw*/
+
+    /* font-size: 80px; */
+    font-size: clamp(30px, 6.6vw, 80px);
+
+    font-weight: 700;
+
+    display: flex;
+    justify-content: center;
+
+    color: #fff;
+    text-shadow: 3px 3px 3px #666;
+}
+.login {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.login a {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 10px;
+    border-radius: 999px;
+    margin-left: 10px;
+}
+
+/* nav */
+#nav ul {
+    width: 100%;
+    display: flex;
+}
+#nav ul li {
+    /* width: 25%; */
+    flex: 1;
+}
+#nav ul li a {
+    display: block;
+    padding: 16px 0;
+    background-color: #7592d1;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    transition:
+        background-color 0.5s,
+        color 0.5s;
+}
+#nav ul li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* main */
+.contents {
+    display: flex;
+}
+#section {
+    /* width: 70%; */
+    flex: 7;
+    padding: 10px;
+}
+#aside {
+    /* width: 30%; */
+    flex: 3;
+    padding: 10px;
+}
+
+#section h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+#section p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -1px;
+}
+
+#aside img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 5px 10px #666;
+}
+
+/* footer */
+#footer address {
+    font-size: 16px;
+    font-style: normal;
+    margin-bottom: 14px;
+}
+#footer p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#footer strong {
+    font-size: 16px;
+}
+
+/* 미디어 쿼리 */
+/* 노트북, 데스크탑 */
+@media (max-width: 1300px) {
+    .container {
+        width: 90%;
+    }
+    .logo {
+        color: rgb(255, 123, 123);
+    }
+}
+
+/* 태블릿 */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    .logo {
+        color: rgb(115, 192, 255);
+    }
+    .login {
+        right: 10px;
+    }
+    .contents {
+        flex-direction: column;
+    }
+    #section {
+        flex: 1;
+    }
+    #aside {
+        flex: 1;
+        display: flex;
+        gap: 2%;
+    }
+    #aside img {
+        width: 32%;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 480px) {
+    #header {
+        background-image: none;
+    }
+    .login {
+        display: none;
+    }
+    .logo {
+        color: #000;
+    }
+    #nav ul {
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    #nav ul li a {
+        border-radius: 15px;
+    }
+    #section {
+        padding: 20px;
+    }
+    #aside {
+        padding: 20px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #aside img {
+        width: 100%;
+    }
+}
